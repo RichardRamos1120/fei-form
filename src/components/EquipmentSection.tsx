@@ -116,57 +116,48 @@ export default function EquipmentSection({ title, items }: Props) {
           )}
         </div>
 
-        <div>
-          <label className="block mb-1 text-gray-700">Manufacturer</label>
-          <input
-            type="text"
-            value={equipmentData.manufacturer || ''}
-            onChange={(e) => item.updateField(type, 'manufacturer', e.target.value)}
-            placeholder="Enter manufacturer or 'Information Unavailable'"
-            className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700"
-          />
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div>
-            <label className="block mb-1 text-gray-700">Manufacture Date</label>
-            <select
-              value={equipmentData.mfgDate || ''}
-              onChange={(e) => handleDateFieldChange(item.updateField, type, 'mfgDate', e.target.value)}
-              className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700 bg-white"
-            >
-              <option value="">Select Date</option>
-              <option value="Information Unavailable">Information Unavailable</option>
-              <option value="custom">Select Custom Date...</option>
-            </select>
-            {equipmentData.mfgDate_showDateInput && (
-              <input
-                type="date"
-                onChange={(e) => item.updateField(type, 'mfgDate', e.target.value)}
-                className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700 mt-2"
-              />
-            )}
+            <label className="block mb-1 text-gray-700">Manufacturer</label>
+            <input
+              type="text"
+              value={equipmentData.manufacturer || ''}
+              onChange={(e) => item.updateField(type, 'manufacturer', e.target.value)}
+              placeholder="Enter manufacturer or 'Information Unavailable'"
+              className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700"
+            />
           </div>
-          
+
           <div>
-            <label className="block mb-1 text-gray-700">Last Cleaned</label>
-            <select
-              value={equipmentData.lastCleaned || ''}
-              onChange={(e) => handleDateFieldChange(item.updateField, type, 'lastCleaned', e.target.value)}
-              className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700 bg-white"
-            >
-              <option value="">Select Date</option>
-              <option value="Information Unavailable">Information Unavailable</option>
-              <option value="custom">Select Custom Date...</option>
-            </select>
-            {equipmentData.lastCleaned_showDateInput && (
-              <input
-                type="date"
-                onChange={(e) => item.updateField(type, 'lastCleaned', e.target.value)}
-                className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700 mt-2"
-              />
-            )}
+            <label className="block mb-1 text-gray-700">Model</label>
+            <input
+              type="text"
+              value={equipmentData.model || ''}
+              onChange={(e) => item.updateField(type, 'model', e.target.value)}
+              placeholder="Enter model or 'Information Unavailable'"
+              className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700"
+            />
           </div>
+        </div>
+
+        <div>
+          <label className="block mb-1 text-gray-700">Manufacture Date</label>
+          <select
+            value={equipmentData.mfgDate || ''}
+            onChange={(e) => handleDateFieldChange(item.updateField, type, 'mfgDate', e.target.value)}
+            className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700 bg-white"
+          >
+            <option value="">Select Date</option>
+            <option value="Information Unavailable">Information Unavailable</option>
+            <option value="custom">Select Custom Date...</option>
+          </select>
+          {equipmentData.mfgDate_showDateInput && (
+            <input
+              type="date"
+              onChange={(e) => item.updateField(type, 'mfgDate', e.target.value)}
+              className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700 mt-2"
+            />
+          )}
         </div>
 
         <div>

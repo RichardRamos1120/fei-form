@@ -10,8 +10,8 @@ export interface EquipmentInventoryRecord extends Omit<FormData, 'miscEquipment'
     type: string;
     serial?: string;
     manufacturer?: string;
+    model?: string;
     mfgDate?: string;
-    lastService?: string;
     notes?: string;
     imageUrl?: string;
   }>;
@@ -50,8 +50,8 @@ const cleanFormData = (data: FormData, imageUrls: Record<string, string>): Equip
       'serial',
       'size', 
       'manufacturer',
+      'model',
       'mfgDate',
-      'lastCleaned',
       'notes'
     ];
     
@@ -91,11 +91,11 @@ const cleanFormData = (data: FormData, imageUrls: Record<string, string>): Equip
     if (item.manufacturer && item.manufacturer.trim()) {
       cleaned.manufacturer = item.manufacturer.trim();
     }
+    if (item.model && item.model.trim()) {
+      cleaned.model = item.model.trim();
+    }
     if (item.mfgDate && item.mfgDate.trim()) {
       cleaned.mfgDate = item.mfgDate.trim();
-    }
-    if (item.lastService && item.lastService.trim()) {
-      cleaned.lastService = item.lastService.trim();
     }
     if (item.notes && item.notes.trim()) {
       cleaned.notes = item.notes.trim();

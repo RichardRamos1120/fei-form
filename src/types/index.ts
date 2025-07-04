@@ -11,17 +11,14 @@ export interface EquipmentItem {
   photoPreview?: string;
   size?: string;
   manufacturer?: string;
+  model?: string;
   mfgDate?: string;
   mfgDate_showDateInput?: boolean;
-  lastCleaned?: string;
-  lastCleaned_showDateInput?: boolean;
   notes?: string;
 }
 
 export interface MiscEquipment extends EquipmentItem {
   type: string;
-  lastService?: string;
-  lastService_showDateInput?: boolean;
 }
 
 export interface EquipmentSet {

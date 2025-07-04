@@ -14,8 +14,8 @@ export default function MiscellaneousEquipment({ items, setItems }: Props) {
       type: '',
       serial: '',
       manufacturer: '',
+      model: '',
       mfgDate: '',
-      lastService: '',
       notes: ''
     }
     setItems([...items, newItem])
@@ -124,57 +124,48 @@ export default function MiscellaneousEquipment({ items, setItems }: Props) {
                     )}
                   </div>
 
-                  <div>
-                    <label className="block mb-1 text-gray-700">Manufacturer</label>
-                    <input
-                      type="text"
-                      value={item.manufacturer || ''}
-                      onChange={(e) => updateItem(index, 'manufacturer', e.target.value)}
-                      placeholder="Enter manufacturer or 'Information Unavailable'"
-                      className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700"
-                    />
-                  </div>
-
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div>
-                      <label className="block mb-1 text-gray-700">Manufacture Date</label>
-                      <select
-                        value={item.mfgDate || ''}
-                        onChange={(e) => handleDateFieldChange(index, 'mfgDate', e.target.value)}
-                        className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700 bg-white"
-                      >
-                        <option value="">Select Date</option>
-                        <option value="Information Unavailable">Information Unavailable</option>
-                        <option value="custom">Select Custom Date...</option>
-                      </select>
-                      {item.mfgDate_showDateInput && (
-                        <input
-                          type="date"
-                          onChange={(e) => updateItem(index, 'mfgDate', e.target.value)}
-                          className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700 mt-2"
-                        />
-                      )}
+                      <label className="block mb-1 text-gray-700">Manufacturer</label>
+                      <input
+                        type="text"
+                        value={item.manufacturer || ''}
+                        onChange={(e) => updateItem(index, 'manufacturer', e.target.value)}
+                        placeholder="Enter manufacturer or 'Information Unavailable'"
+                        className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700"
+                      />
                     </div>
-                    
+
                     <div>
-                      <label className="block mb-1 text-gray-700">Last Serviced</label>
-                      <select
-                        value={item.lastService || ''}
-                        onChange={(e) => handleDateFieldChange(index, 'lastService', e.target.value)}
-                        className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700 bg-white"
-                      >
-                        <option value="">Select Date</option>
-                        <option value="Information Unavailable">Information Unavailable</option>
-                        <option value="custom">Select Custom Date...</option>
-                      </select>
-                      {item.lastService_showDateInput && (
-                        <input
-                          type="date"
-                          onChange={(e) => updateItem(index, 'lastService', e.target.value)}
-                          className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700 mt-2"
-                        />
-                      )}
+                      <label className="block mb-1 text-gray-700">Model</label>
+                      <input
+                        type="text"
+                        value={item.model || ''}
+                        onChange={(e) => updateItem(index, 'model', e.target.value)}
+                        placeholder="Enter model or 'Information Unavailable'"
+                        className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700"
+                      />
                     </div>
+                  </div>
+
+                  <div>
+                    <label className="block mb-1 text-gray-700">Manufacture Date</label>
+                    <select
+                      value={item.mfgDate || ''}
+                      onChange={(e) => handleDateFieldChange(index, 'mfgDate', e.target.value)}
+                      className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700 bg-white"
+                    >
+                      <option value="">Select Date</option>
+                      <option value="Information Unavailable">Information Unavailable</option>
+                      <option value="custom">Select Custom Date...</option>
+                    </select>
+                    {item.mfgDate_showDateInput && (
+                      <input
+                        type="date"
+                        onChange={(e) => updateItem(index, 'mfgDate', e.target.value)}
+                        className="w-full p-2.5 border border-gray-300 rounded focus:outline-none focus:border-red-700 mt-2"
+                      />
+                    )}
                   </div>
 
                   <div>
